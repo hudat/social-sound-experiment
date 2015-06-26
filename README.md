@@ -8,7 +8,7 @@ This experiment leverages the Twitter API to listen in on the feelings of the co
 
 * [Roadmap](#roadmap)
   * [Features](#features]
-  * [Dependencies](#Twitter API)
+  * [Dependencies](#Dependencies)
 * [License](#license)
 
 <!-- toc stop -->
