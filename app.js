@@ -20,3 +20,11 @@ if (emotion != -1) {
 }
 
 console.log(chords);
+
+// Stub player object
+
+var Play = function(chord) {
+  return "The" + chord + "being played is"
+}
+
+// Stub chord object
