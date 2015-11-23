@@ -12,7 +12,19 @@ jQuery(document).ready(function($) {
     console.log(data);
     console.log("There are " + data.tweets.length + " tweets");
     console.log('The first tweet is "' + data.tweets[0].tweet + '" by user ' + data.tweets[0].user);
+
+    var sad = ["sad", "upset", "depressed", "hurt", "melancholy", "feeling down"]
+    var happy = ["happy", "joy", "joyful", "excited", "ecstatic", "looking forward", "content", "pleasant"]
+    var afraid = ["afraid", "i\'m afraid", "fearful", "fear", "scared", "shocked", "surprised", "startled", "alarmed"]
+    var angry = ["angry," "mad", "disgusted", "annoyed", "frustrated", "pissed off"]
+    // Loop through the tweets
+       var tweets = data.tweets;
+       tweets.forEach(function(tweetData) {
+           tweetData.tweet.split(" ");
+       });
 });
+
+
 </script>
 
 <body>
