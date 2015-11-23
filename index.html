@@ -16,11 +16,12 @@ jQuery(document).ready(function($) {
     var sad = ["sad", "upset", "depressed", "hurt", "melancholy", "feeling down"]
     var happy = ["happy", "joy", "joyful", "excited", "ecstatic", "looking forward", "content", "pleasant"]
     var afraid = ["afraid", "i\'m afraid", "fearful", "fear", "scared", "shocked", "surprised", "startled", "alarmed"]
-    var angry = ["angry," "mad", "disgusted", "annoyed", "frustrated", "pissed off"]
+    var angry = ["angry", "mad", "disgusted", "annoyed", "frustrated", "pissed off"]
     // Loop through the tweets
        var tweets = data.tweets;
        tweets.forEach(function(tweetData) {
-           tweetData.tweet.split(" ");
+           words = tweetData.tweet.split(" ");
+           console.log(words);
        });
 });
 
