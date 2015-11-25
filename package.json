@@ -1,0 +1,16 @@
+{
+  "name": "emotionation",
+  "version": "0.0.1",
+  "description": "tweet -> emotion -> soundwave",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "tap test/**/*.js"
+  },
+  "author": "Isam <machlovi@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "tap": "^2.3.1",
+    "underscore": "^1.8.3"
+  }
+}

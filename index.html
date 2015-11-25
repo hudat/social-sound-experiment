@@ -1,51 +1,20 @@
+<!doctype html>
 <html>
-<head>
- <title>Social Sounds</title>
- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-</head>
-<body>
-
-<script>
-jQuery(document).ready(function($) {
-   var tweetsJson = '{ "tweets": [ { "tweet": "scared to leave my house. the world\'s a mess", "user": "blondesally" }, { "tweet": "excited for this new project", "user": "dwaynejohnson" }, { "tweet": "pissed off at this fucking mediocre scumbags", "user": "billhicks" }, { "tweet": "happy happenstance", "user": "harleyquinn" }, { "tweet": "using sadness to guide", "user": "joker" }, { "tweet": "surprised to see hyde", "user": "jekyll" }, { "tweet": "rage is here", "user": "morello" }, { "tweet": "confused here at the crossroads", "user": "faulkner" }, { "tweet": "free and alive", "user": "robertjohnson" } ] }';
-   var data = JSON.parse(tweetsJson);
-
-   // console.log(data);
-   // console.log('The first tweet is "' + data.tweets[0].tweet + '" by user ' + data.tweets[0].user);
-
-   // pass in tweet, returns the emotion of this tweet or null if it doesn't match any emotion
-   function getEmotionForTweet(tweet) {
-
-   // loop through sadness array of words. return 'sadness' if tweet contains a word in that array
-   var sadList = ["sad", "upset", "depressed", "hurt", "melancholy", "feeling down"];
-   var happyList = ["happy", "joy", "joyful", "excited", "ecstatic", "looking forward", "content", "pleasant"]
-   var afraidList = ["afraid", "i'm afraid", "fearful", "fear", "scared", "shocked", "surprised", "startled", "alarmed"]
-   var angryList = ["angry", "mad", "disgusted", "annoyed", "frustrated", "pissed off"]
-
-   // split tweet into separate words
-       var tweetWords = tweet.split(" ");
-
-   // loop through each word in the tweet. We use a for() loop because here because
-   // it lets us exit prematurely once we find the emotion (the return statement)
-   for(var i = 0; i < tweetWords.length; ++i) {
-       var word = tweetWords[i];
-           if ($.inArray(word, sadList) !== -1) { return 'sad'; }
-           if ($.inArray(word, happyList) !== -1) { return 'happy'; }
-           if ($.inArray(word, afraidList) !== -1) { return 'afraid'; }
-           if ($.inArray(word, angryList) !== -1) { return 'angry'; }
-   };
-   return null;
-   }
-
-   // Loop through the tweets (you can use any type of loop. I chose forEach)
-   var tweets = data.tweets;
-   tweets.forEach(function(data) {
-     var emotion = getEmotionForTweet(data.tweet);
-     if (emotion !== null) {
-         console.log("EMOTION: " + emotion + " for TWEET: " + data.tweet);
-     }   
-   });
-});
-</script>
-<body>
+  <head>
+    <title>thought > tweet > toundwave</title>
+  </head>
+  <body>
+    <p>Moved code to <b>src/</b> dir. see <b>src/index.js</b> and how it makes use of the other js files in that dir. Currently the only dependency is the tap (TestAnythingProtocol) test framework which is optional.</p>
+    <h4>· Run on the commandline by `cd` into dir and then `npm install`</h4>
+    <h4>· Then make sure tests pass with `npm test` on commandline (later view test/*.js file to see example unit test)</h4>
+    <h4>· Finally run on the commandline by with `npm start`</h4>
+    <h3>output should be the same as what we saw in the browser</h3>
+    <script>
+      console.log("RUN ME IN THE COMMANDLINE!");
+      console.log("cd dir/");
+      console.log("npm install");
+      console.log("npm test");
+      console.log("npm start");
+    </script>
+  </body>
 </html>
