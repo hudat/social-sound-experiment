@@ -7,6 +7,7 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 var url = 'mongodb://localhost:27017/socialSounds';
+var port = process.env.PORT || 5000;
 
 // var twitterStream = twitterService();
 // console.log(tweets);
@@ -34,7 +35,7 @@ tweets.forEach(function(data) {
         db.close();
     });
   });
-  
+
   if (emotion !== null) {
     console.log("EMOTION: " + emotion + " for TWEET: " + data.tweet);
   }
