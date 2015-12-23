@@ -18,7 +18,7 @@ module.exports = function(tweet) {
   for (var i = 0; i < tweetWords.length; ++i) {
     var word = tweetWords[i];
     if (_.contains(sadList, word)) {
-      return 'sad';
+      return 'sad'; 
     }
     if (_.contains(happyList, word)) {
       return 'happy';

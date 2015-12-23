@@ -17,12 +17,13 @@ var port = process.env.PORT || 5000;
 var getEmotionForTweet = require('./getEmotionForTweet');
 
 tweets.forEach(function(data) {
-  var emotion = getEmotionForTweet(data.tweet);
 
-  var insertDocument = function(db, callback, emotion) {
+  var insertDocument = function(db, callback) {
+    var emotion = getEmotionForTweet(data.tweet);
+
     db.collection('chords').insertOne({
       "chord": emotion
-        }, function(err, result) {
+    }, function(err, result) {
       assert.equal(err, null);
       console.log("Inserted a document into the chords collection.");
       callback(result);
@@ -32,11 +33,11 @@ tweets.forEach(function(data) {
   MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
     insertDocument(db, function() {
-        db.close();
+      db.close();
     });
   });
 
-  if (emotion !== null) {
-    console.log("EMOTION: " + emotion + " for TWEET: " + data.tweet);
-  }
+  // if (emotion !== null) {
+  //   console.log("EMOTION: " + emotion + " for TWEET: " + data.tweet);
+  // }
 });
