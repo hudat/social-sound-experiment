@@ -12,7 +12,8 @@ Session.vim
 .~$
 tags
 .tags
-*.sw? 
+*.sw?
+/private
 
 .DS_Store
 .AppleDouble
