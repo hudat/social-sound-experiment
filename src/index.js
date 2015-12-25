@@ -9,7 +9,7 @@ var ObjectId = require('mongodb').ObjectID;
 var url = 'mongodb://localhost:27017/socialSounds';
 var port = process.env.PORT || 5000;
 
-// var twitterStream = twitterService();
+var twitterStream = twitterService();
 // console.log(tweets);
 
 // Pass in tweet, returns the emotion of this tweet or null if
@@ -18,8 +18,11 @@ var getEmotionForTweet = require('./getEmotionForTweet');
 
 tweets.forEach(function(data) {
 
-  var insertDocument = function(db, callback) {
-    var emotion = getEmotionForTweet(data.tweet);
+  var chordCreation = function(db, callback) {
+
+    var emotion = {
+      emotion: getEmotionForTweet(data.tweet),
+    };
 
     db.collection('chords').insertOne({
       "chord": emotion
@@ -32,10 +35,14 @@ tweets.forEach(function(data) {
 
   MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
-    insertDocument(db, function() {
+    chordCreation(db, function() {
       db.close();
     });
   });
+
+  // if chord === happy {
+  //   console.log("playing a happy chord")
+  // };
 
   // if (emotion !== null) {
   //   console.log("EMOTION: " + emotion + " for TWEET: " + data.tweet);
